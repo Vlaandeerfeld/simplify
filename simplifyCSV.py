@@ -185,5 +185,10 @@ def simplifyFiles(files, season, teams, leagues):
 
 	dfGameIdGoalie.to_csv('simplifiedCSV/game_id_goalie.csv', index=False)
 
+def main():
+	files = importFiles()
+	season, teams, leagues = getLeagues(files[8], files[2])
+	simplifyFiles(files, season, teams, leagues)
+
 if __name__ == "__main__":
-    main()
+	main()
