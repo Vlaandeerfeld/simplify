@@ -2,17 +2,17 @@ import pandas as pd
 
 # Importing CSV files
 def importFiles():
-	dfPlayerMaster = pd.read_csv('csv/player_master.csv', sep = ";", on_bad_lines='skip', encoding='latin-1', dtype=str)
-	dfPlayerSkater = pd.read_csv('csv/player_skater_stats_rs.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfTeamData = pd.read_csv('csv/team_data.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfTeamLines = pd.read_csv('csv/team_lines.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfPlayerGoalie = pd.read_csv('csv/player_goalie_stats_rs.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfPlayerContract = pd.read_csv('csv/player_contract.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfTeamStats = pd.read_csv('csv/team_stats.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfTeamRecords = pd.read_csv('csv/team_records.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfSchedules = pd.read_csv('csv/schedules.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfBoxSkaterSummary = pd.read_csv('csv/boxscore_skater_summary.csv', sep = ';', encoding='latin-1', dtype=str)
-	dfBoxGoalieSummary = pd.read_csv('csv/boxscore_goalie_summary.csv', sep = ';', encoding='latin-1', dtype=str)
+	dfPlayerMaster = pd.read_csv('csv/player_master.csv', sep = ";", on_bad_lines='skip', encoding='ISO-8859-15', dtype=str)
+	dfPlayerSkater = pd.read_csv('csv/player_skater_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfTeamData = pd.read_csv('csv/team_data.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfTeamLines = pd.read_csv('csv/team_lines.csv', sep = ';', encoding='ISO-8859-15', dtype=str,index_col=False)
+	dfPlayerGoalie = pd.read_csv('csv/player_goalie_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerContract = pd.read_csv('csv/player_contract.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfTeamStats = pd.read_csv('csv/team_stats.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfTeamRecords = pd.read_csv('csv/team_records.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfSchedules = pd.read_csv('csv/schedules.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfBoxSkaterSummary = pd.read_csv('csv/boxscore_skater_summary.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfBoxGoalieSummary = pd.read_csv('csv/boxscore_goalie_summary.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 
 	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary])
 	
@@ -26,14 +26,14 @@ def getLeagues(dfSchedules, dfTeamData):
 	season = seasonStart + "/" + seasonEnd
 
 	#get number of leagues to check for
-	print("Number of leagues: ")
-	numLeagues = int(input())
-	leagues = []
+#	print("Number of leagues: ")
+	numLeagues = int(1)
+	leagues = ["0"]
 
 	#get league ids
-	print("Enter league Ids: ")
-	for x in range(numLeagues):
-		leagues.append(input())
+#	print("Enter league Ids: ")
+#	for x in range(numLeagues):
+#		leagues.append(input())
 
 	#get teams from leagues input
 	teams = []
@@ -61,7 +61,7 @@ def simplifyFiles(files, season, teams, leagues):
 	dfPlayerMaster.insert(0, 'Season',  value=column)
 	dfPlayerMasterSimplified = dfPlayerMaster[dfPlayerMaster['TeamId'].isin(teams)]
 	dfPlayerMasterSimplified = dfPlayerMasterSimplified[~dfPlayerMasterSimplified['PlayerId'].isin(['0']) == True]
-	dfPlayerMasterSimplified = dfPlayerMasterSimplified.drop(dfPlayerMasterSimplified.iloc[:, 7:17], axis = 1)
+	dfPlayerMasterSimplified = dfPlayerMasterSimplified.drop(dfPlayerMasterSimplified.iloc[:, 10:16], axis = 1)
 	dfPlayerMasterSimplified = dfPlayerMasterSimplified.drop(columns=['FranchiseId'], axis = 1)
 
 	dfPlayerMasterSimplified.to_csv('simplifiedCSV/player_master_simplified.csv', index=False)
@@ -83,10 +83,10 @@ def simplifyFiles(files, season, teams, leagues):
 	dfPlayerContract = dfPlayerContract[dfPlayerContract['Team'].isin(teams)]
 	dfPlayerContract = dfPlayerContract[~dfPlayerContract['PlayerId'].isin(['0']) == True]
 	dfPlayerContractSimplified = dfPlayerContract.drop(dfPlayerContract.iloc[:, 1:7], axis = 1)
+	dfPlayerContractSimplified.to_csv('simplifiedCSV/contracts_simplified.csv', index=False)
 
 	#merge player simplified and contract simplified to make player stats simplified
 	dfPlayerStatsSimplified = pd.merge(dfPlayerSimplified, dfPlayerContractSimplified, on = "PlayerId")
-	dfPlayerStatsSimplified = dfPlayerStatsSimplified.dropna(axis='columns', how='all')
 	dfPlayerStatsSimplified.to_csv('simplifiedCSV/player_stats_simplified.csv', index=False)
 
 	#merge player master and player goalie to create goalie simplified
@@ -94,13 +94,12 @@ def simplifyFiles(files, season, teams, leagues):
 
 	#merge goalie simplified and player contract to make goalie stats simplified
 	dfGoalieStatsSimplified = pd.merge(dfGoalieSimplified, dfPlayerContractSimplified, on = "PlayerId")
-	dfGoalieStatsSimplified = dfGoalieStatsSimplified.dropna(axis='columns', how='all')
 	dfGoalieStatsSimplified.to_csv('simplifiedCSV/goalie_stats_simplified.csv', index=False)
 
 	#create simplified team data
 	dfTeamData = dfTeamData[dfTeamData['TeamId'].isin(teams)]
 	dfTeamData = dfTeamData.drop(dfTeamData.iloc[:, 4:], axis = 1)
-	dfTeamData = dfTeamData.drop(columns = ['LeagueId', 'Name'], axis = 1)
+	dfTeamData = dfTeamData.drop(columns = ['Name'], axis = 1)
 	dfTeamDataSimplified = dfTeamData.rename(columns = {'Nickname': 'Name'})
 
 	dfTeamDataSimplified.to_csv('simplifiedCSV/team_data_simplified.csv', index=False)
@@ -111,7 +110,7 @@ def simplifyFiles(files, season, teams, leagues):
 	df1 = df1.drop(columns = ['Extra Attacker 1', 'Extra Attacker 2'], axis = 1)
 
 	list1 = df1.values.tolist()
-	list2 = dfPlayerStatsSimplified.values.tolist()
+	list2 = dfPlayerMasterSimplified.values.tolist()
 	list3 = dfGoalieStatsSimplified.values.tolist()
 
 	for x in range(len(list1)):
@@ -184,7 +183,8 @@ def simplifyFiles(files, season, teams, leagues):
 	dfGameIdPlayer.to_csv('simplifiedCSV/game_id_player.csv', index=False)
 
 	dfGameIdGoalie.to_csv('simplifiedCSV/game_id_goalie.csv', index=False)
-
+	
+	
 def main():
 	files = importFiles()
 	season, teams, leagues = getLeagues(files[8], files[2])
