@@ -1,0 +1,31 @@
+Season,TeamId,FranchiseId,LW1,C1,RW1,LD1,RD1,LW2,C2,RW2,LD2,RD2,LW3,C3,RW3,LD3,RD3,LW4,C4,RW4,G1,G2
+2003/2004,0,0,Bulis,Hahl,Ryder,Beauchemin,Souray,Wiemer,Begin,Vrbata,Komisarek,Rivet,Ruutu,Ribeiro,Hossa,Myrvold,Bouillon,Kvasha,Keefe,Sundström,Theodore,Garon
+2003/2004,3,0,Renberg,Rucchin,Nolan,Kaberle,Pilar,Domi,Fitzgerald,Mogilny,Johansson,,Kolnik,Nieuwendyk,Rycroft,Berg,,,Reichel,,Belfour,Hodson
+2003/2004,5,0,Samsonov,Thornton,Murray,McGillis,Gill,Axelsson,Rolston,Jones,,,Schaefer,Bergeron,,Valicevic,Knuble,Huml,Green,Zamuner,Raycroft,Potvin
+2003/2004,8,0,Daze,Zhamnov,Sullivan,Tverdovsky,Quint,,Arnason,Sim,Keith,Klemm,Bell,Nichol,,Strudwick,Karpovtsev,Nieminen,Ruutu,Korolev,Thibault,Passmore
+2003/2004,9,0,Whitney,Datsyuk,Maltby,Lidstrom,Schneider,Shanahan,Draper,Weinhandl,Hatcher,Kronwall,Thomas,Devereaux,Holmstrom,Mironov,Chelios,Hull,Stock,Williams,Joseph,Legace
+2003/2004,10,0,Rucinský,Lindros,Kovalev,Poti,Leetch,Simon,Carter,Hinote,Malakhov,Bouchard,Hlavác,Rheaume,Barnaby,de Vries,Nielsen,Nedved,Larose,Young,Dunham,Markkanen
+2003/2004,11,0,Avery,Stümpel,Palffy,Modry,Visnovsky,Frolov,Belanger,Laperriere,Norstrom,Corvo,Robitaille,Armstrong,Kallio,Strbák,Miller,Cammalleri,Chartrand,Klatt,Huet,Cechmanek
+2003/2004,12,0,Morrow,Modano,Arnott,Numminen,Zubov,Gainey,Malhotra,Guerin,Matvichuk,Robidas,Tjärnqvist,Brind'Amour,DiMaio,Berenzweig,Kasparaitis,Corson,Turgeon,Kapanen,Turco,McLennan
+2003/2004,14,0,Gagne,Comrie,Recchi,Johnsson,Therien,Arvedson,Primeau,Williams,Ragnarsson,Seidenberg,Sharp,Carter,Amonte,Slaney,Kapanen,Stevenson,Roenick,Lapointe,Esche,Hackett
+2003/2004,15,0,Malone,Lemieux,Morozov,Tärnström,Delmore,Bradley,Straka,Kostopoulos,Orpik,DuPont,Surový,Eastwood,Buchberger,Melichar,Boileau,Pirjetä,Kraft,Petersen,Fleury,Aubin
+2003/2004,16,0,Tkachuk,Demitra,Drake,Pronger,Jackman,Roberts,Johnson,Mayers,Bäckman,Stuart,Cajánek,Boguniecki,Nickulas,,Baron,,Martins,Mellanby,Johnson,
+2003/2004,17,0,Satan,Drury,Dumont,Zhitnik,Campbell,Pyatt,Bouchard,Adams,Kalinin,McKee,Lindsay,Mair,74,Tallinder,Laflamme,Brown,Holzinger,Nilson,Biron,Miller
+2003/2004,18,0,Naslund,Morrison,Bertuzzi,Markov,Jovanovski,Sedin,Cooke,Linden,Ohlund,Salo,Berezin,Sedin,Audette,légr,Sopel,May,Juneau,Dagenais,Cloutier,Hedberg
+2003/2004,19,0,Gelinas,Reinprecht,Iginla,Gauthier,Regehr,McAmmond,Yelle,Donovan,Montador,Lydman,Bartecko,Betts,Clark,Commodore,Warrener,Green,Oliwa,Kobasew,Kiprusoff,Turek
+2003/2004,20,0,Laaksonen,Peca,Parrish,Niinimaa,Aucoin,Asham,Yashin,Zednik,Hamrlik,Martinek,Hunter,Bates,Czerkawski,Jonsson,Dykhuis,Godard,Cibák,Afanasenkov,DiPietro,Sauvé
+2003/2004,21,0,Elias,Madden,Gionta,Niedermayer,Martin,Pandolfo,Gomez,Rupp,Stevens,Giroux,Langenbrunner,Rasmussen,Marshall,White,Brown,Friesen,Brylin,Berglund,Brodeur,Schwab
+2003/2004,22,0,Zubrus,Halpern,Grier,Boumedienne,Gonchar,Konowalchuk,Nylander,Semin,Witt,Fortin,Pettinger,Lang,Bondra,Kwiatkowski,Doig,Sutherby,Miller,Whitfield,Kolzig,Gerber
+2003/2004,23,0,Smyth,York,Chimera,Brewer,Smith,Torres,Horcoff,Hemsky,Staios,Sloan,Isbister,Reasoner,Pisani,,Semyonov,Stoll,Oates,Laraque,Salo,Conklin
+2003/2004,24,0,Cole,Adams,Brendl,Zyuzin,Boucher,Staal,O'Neill,Webb,Wallin,Hill,Bayda,Murray,Svoboda,Fischer,Ward,LaRose,Kilger,Willsie,Weekes,Storr
+2003/2004,25,0,Tanguay,Sakic,Hejduk,Morris,Blake,Larsen,Nikolishin,Selänne,Skrastins,Foote,LaCouture,Ronning,Moore,Skoula,Brisebois,Murray,Forsberg,Battaglia,Aebischer,Budaj
+2003/2004,26,0,Nash,Langkow,Doan,Mara,Tanabe,Cleary,Sillinger,Nagy,Ference,Malik,Savage,Gratton,Johnson,Keane,Cullen,Wilson,Lemieux,Radivojevic,Burke,Boucher
+2003/2004,27,0,Sturm,Marleau,Cheechoo,Hannan,Stuart,Thornton,Primeau,Michalek,Rathje,Ehrhoff,Ekman,McCauley,Parker,McLaren,Preissing,Damphousse,Ricci,Goc,Nabokov,Toskala
+2003/2004,28,0,Hossa,Bonk,Alfredsson,Chara,Rachunek,Havlat,Smolinski,Neil,Redden,Hnidy,Schastlivy,Fisher,Niedermayer,Leschyshyn,Boynton,Van Allen,Spezza,White,Lalime,Prusek
+2003/2004,29,0,Modin,Lecavalier,Richards,Kubina,Boyle,Andreychuk,Taylor,St. Louis,Cullimore,Clymer,Dingman,Scatchard,Bylsma,Berehowsky,Sarich,,Dowd,Alexeev,Grahame,Khabibulin
+2003/2004,30,0,Prospal,Påhlsson,Sýkora,O'Donnell,Dandenault,McDonald,Fedorov,Varada,Salei,Carney,Chistov,Chubarov,Krog,Vishnevski,Sauer,Smirnov,Druken,Burnett,Giguere,Tellqvist
+2003/2004,31,0,Kozlov,Kozlov,Bure,Bouwmeester,Pothier,Huselius,Cullen,Ponikarovsky,Mezei,,Hagman,Vasicek,Horton,,Hulse,Nedorost,Aubin,Weiss,Luongo,Shields
+2003/2004,32,0,Erat,Legwand,Walker,Timonen,Weber,Murray,Johnson,Hall,Eaton,York,Fiddler,Johansson,Orszagh,Hamhuis,Zidlicky,McKenzie,Arkhipov,Smith,Vokoun,Mason
+2003/2004,33,0,Kovalchuk,Jokinen,McEachern,Kaberle,Tremblay,Heatley,Savard,Petrovicky,Tjärnqvist,Sutton,Cowan,Robitaille,Tapper,Heins,Nummelin,Santala,Stefan,Swanson,Dafoe,Lehtonen
+2003/2004,34,0,Sanderson,Marchant,Nash,Sydor,Klesla,Mozyakin,Wright,Výborný,Eriksson,Spacek,Shelley,Knutsen,Harvey,Richardson,Westcott,Pandolfo,Cassels,Pronger,Brathwaite,
+2003/2004,35,0,Brunette,Park,Gaborik,Kuba,Schultz,Fedotenko,Zholtok,Veilleux,Hedican,Patrick,Muckalt,Walz,Kotalík,Mitchell,Bombardir,Daigle,Chouinard,Hannula,Roloson,Fernandez
