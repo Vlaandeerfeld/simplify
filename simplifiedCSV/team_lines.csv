@@ -1,31 +1,37 @@
-Season,TeamId,FranchiseId,LW1,C1,RW1,LD1,RD1,LW2,C2,RW2,LD2,RD2,LW3,C3,RW3,LD3,RD3,LW4,C4,RW4,G1,G2
-2003/2004,0,0,Bulis,Hahl,Ryder,Beauchemin,Souray,Wiemer,Begin,Vrbata,Komisarek,Rivet,Ruutu,Ribeiro,Hossa,Myrvold,Bouillon,Kvasha,Keefe,Sundström,Theodore,Garon
-2003/2004,3,0,Renberg,Rucchin,Nolan,Kaberle,Pilar,Domi,Fitzgerald,Mogilny,Johansson,,Kolnik,Nieuwendyk,Rycroft,Berg,,,Reichel,,Belfour,Hodson
-2003/2004,5,0,Samsonov,Thornton,Murray,McGillis,Gill,Axelsson,Rolston,Jones,,,Schaefer,Bergeron,,Valicevic,Knuble,Huml,Green,Zamuner,Raycroft,Potvin
-2003/2004,8,0,Daze,Zhamnov,Sullivan,Tverdovsky,Quint,,Arnason,Sim,Keith,Klemm,Bell,Nichol,,Strudwick,Karpovtsev,Nieminen,Ruutu,Korolev,Thibault,Passmore
-2003/2004,9,0,Whitney,Datsyuk,Maltby,Lidstrom,Schneider,Shanahan,Draper,Weinhandl,Hatcher,Kronwall,Thomas,Devereaux,Holmstrom,Mironov,Chelios,Hull,Stock,Williams,Joseph,Legace
-2003/2004,10,0,Rucinský,Lindros,Kovalev,Poti,Leetch,Simon,Carter,Hinote,Malakhov,Bouchard,Hlavác,Rheaume,Barnaby,de Vries,Nielsen,Nedved,Larose,Young,Dunham,Markkanen
-2003/2004,11,0,Avery,Stümpel,Palffy,Modry,Visnovsky,Frolov,Belanger,Laperriere,Norstrom,Corvo,Robitaille,Armstrong,Kallio,Strbák,Miller,Cammalleri,Chartrand,Klatt,Huet,Cechmanek
-2003/2004,12,0,Morrow,Modano,Arnott,Numminen,Zubov,Gainey,Malhotra,Guerin,Matvichuk,Robidas,Tjärnqvist,Brind'Amour,DiMaio,Berenzweig,Kasparaitis,Corson,Turgeon,Kapanen,Turco,McLennan
-2003/2004,14,0,Gagne,Comrie,Recchi,Johnsson,Therien,Arvedson,Primeau,Williams,Ragnarsson,Seidenberg,Sharp,Carter,Amonte,Slaney,Kapanen,Stevenson,Roenick,Lapointe,Esche,Hackett
-2003/2004,15,0,Malone,Lemieux,Morozov,Tärnström,Delmore,Bradley,Straka,Kostopoulos,Orpik,DuPont,Surový,Eastwood,Buchberger,Melichar,Boileau,Pirjetä,Kraft,Petersen,Fleury,Aubin
-2003/2004,16,0,Tkachuk,Demitra,Drake,Pronger,Jackman,Roberts,Johnson,Mayers,Bäckman,Stuart,Cajánek,Boguniecki,Nickulas,,Baron,,Martins,Mellanby,Johnson,
-2003/2004,17,0,Satan,Drury,Dumont,Zhitnik,Campbell,Pyatt,Bouchard,Adams,Kalinin,McKee,Lindsay,Mair,74,Tallinder,Laflamme,Brown,Holzinger,Nilson,Biron,Miller
-2003/2004,18,0,Naslund,Morrison,Bertuzzi,Markov,Jovanovski,Sedin,Cooke,Linden,Ohlund,Salo,Berezin,Sedin,Audette,légr,Sopel,May,Juneau,Dagenais,Cloutier,Hedberg
-2003/2004,19,0,Gelinas,Reinprecht,Iginla,Gauthier,Regehr,McAmmond,Yelle,Donovan,Montador,Lydman,Bartecko,Betts,Clark,Commodore,Warrener,Green,Oliwa,Kobasew,Kiprusoff,Turek
-2003/2004,20,0,Laaksonen,Peca,Parrish,Niinimaa,Aucoin,Asham,Yashin,Zednik,Hamrlik,Martinek,Hunter,Bates,Czerkawski,Jonsson,Dykhuis,Godard,Cibák,Afanasenkov,DiPietro,Sauvé
-2003/2004,21,0,Elias,Madden,Gionta,Niedermayer,Martin,Pandolfo,Gomez,Rupp,Stevens,Giroux,Langenbrunner,Rasmussen,Marshall,White,Brown,Friesen,Brylin,Berglund,Brodeur,Schwab
-2003/2004,22,0,Zubrus,Halpern,Grier,Boumedienne,Gonchar,Konowalchuk,Nylander,Semin,Witt,Fortin,Pettinger,Lang,Bondra,Kwiatkowski,Doig,Sutherby,Miller,Whitfield,Kolzig,Gerber
-2003/2004,23,0,Smyth,York,Chimera,Brewer,Smith,Torres,Horcoff,Hemsky,Staios,Sloan,Isbister,Reasoner,Pisani,,Semyonov,Stoll,Oates,Laraque,Salo,Conklin
-2003/2004,24,0,Cole,Adams,Brendl,Zyuzin,Boucher,Staal,O'Neill,Webb,Wallin,Hill,Bayda,Murray,Svoboda,Fischer,Ward,LaRose,Kilger,Willsie,Weekes,Storr
-2003/2004,25,0,Tanguay,Sakic,Hejduk,Morris,Blake,Larsen,Nikolishin,Selänne,Skrastins,Foote,LaCouture,Ronning,Moore,Skoula,Brisebois,Murray,Forsberg,Battaglia,Aebischer,Budaj
-2003/2004,26,0,Nash,Langkow,Doan,Mara,Tanabe,Cleary,Sillinger,Nagy,Ference,Malik,Savage,Gratton,Johnson,Keane,Cullen,Wilson,Lemieux,Radivojevic,Burke,Boucher
-2003/2004,27,0,Sturm,Marleau,Cheechoo,Hannan,Stuart,Thornton,Primeau,Michalek,Rathje,Ehrhoff,Ekman,McCauley,Parker,McLaren,Preissing,Damphousse,Ricci,Goc,Nabokov,Toskala
-2003/2004,28,0,Hossa,Bonk,Alfredsson,Chara,Rachunek,Havlat,Smolinski,Neil,Redden,Hnidy,Schastlivy,Fisher,Niedermayer,Leschyshyn,Boynton,Van Allen,Spezza,White,Lalime,Prusek
-2003/2004,29,0,Modin,Lecavalier,Richards,Kubina,Boyle,Andreychuk,Taylor,St. Louis,Cullimore,Clymer,Dingman,Scatchard,Bylsma,Berehowsky,Sarich,,Dowd,Alexeev,Grahame,Khabibulin
-2003/2004,30,0,Prospal,Påhlsson,Sýkora,O'Donnell,Dandenault,McDonald,Fedorov,Varada,Salei,Carney,Chistov,Chubarov,Krog,Vishnevski,Sauer,Smirnov,Druken,Burnett,Giguere,Tellqvist
-2003/2004,31,0,Kozlov,Kozlov,Bure,Bouwmeester,Pothier,Huselius,Cullen,Ponikarovsky,Mezei,,Hagman,Vasicek,Horton,,Hulse,Nedorost,Aubin,Weiss,Luongo,Shields
-2003/2004,32,0,Erat,Legwand,Walker,Timonen,Weber,Murray,Johnson,Hall,Eaton,York,Fiddler,Johansson,Orszagh,Hamhuis,Zidlicky,McKenzie,Arkhipov,Smith,Vokoun,Mason
-2003/2004,33,0,Kovalchuk,Jokinen,McEachern,Kaberle,Tremblay,Heatley,Savard,Petrovicky,Tjärnqvist,Sutton,Cowan,Robitaille,Tapper,Heins,Nummelin,Santala,Stefan,Swanson,Dafoe,Lehtonen
-2003/2004,34,0,Sanderson,Marchant,Nash,Sydor,Klesla,Mozyakin,Wright,Výborný,Eriksson,Spacek,Shelley,Knutsen,Harvey,Richardson,Westcott,Pandolfo,Cassels,Pronger,Brathwaite,
-2003/2004,35,0,Brunette,Park,Gaborik,Kuba,Schultz,Fedotenko,Zholtok,Veilleux,Hedican,Patrick,Muckalt,Walz,Kotalík,Mitchell,Bombardir,Daigle,Chouinard,Hannula,Roloson,Fernandez
+Season,TeamId,FranchiseId,LW1,C1,RW1,LD1,RD1,LW2,C2,RW2,LD2,RD2,LW3,C3,RW3,LD3,RD3,LW4,C4,RW4,G1,G2,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37
+2034/2035,0,0,Canadiens,MTL,-1,-1,-1,-1,-1,-1,-1,-1,#c60000,#0031ad,#fefef4,71,71,Karmiris,Gruber,Meár,Gruber,Meár,Soleway,Caufield,Karmiris,Boily,Gruber,Meár,Slafkovský,Caufield,Meár,Boily,Karmiris,Slafkovský,Rousseau,Grout,
+2034/2035,3,0,Maple Leafs,TOR,-1,-1,-1,-1,-1,-1,-1,-1,#000084,#000084,#fefef4,71,71,Zonnon,Kennedy,Bélanger,Frondell,Kennedy,Undershute,Hughes,Zonnon,Kiviharju,Stenberg,Kennedy,Toufexis,Frondell,Kennedy,Hughes,Wares,Karzinkin,Jones,Bonner,
+2034/2035,5,0,Bruins,BOS,-1,-1,-1,-1,-1,-1,-1,-1,#ffc422,#000000,#fefef4,71,1,Lysell,Renkowski,Andresen,Lysell,Villeneuve,Kostenko,McMurchy,Andresen,Grumley,Lysell,Villeneuve,Lalonde,Smisek,Villeneuve,Andresen,Sexton,Lysell,Boettiger,Flores,
+2034/2035,8,0,Blackhawks,CHI,-1,-1,-1,-1,-1,-1,-1,-1,#e3263a,#000000,#fefef4,1,1,Lemieux,McKenna,Finley,Lemieux,Misa,Phillips,Louhemäki,McKenna,Dickinson,Lemieux,Misa,Karlsson,Misa,Iverson,Poulin,Dickinson,Lemieux,Erliden,Cusick,
+2034/2035,9,0,Red Wings,DET,-1,-1,-1,-1,-1,-1,-1,-1,#bf0000,#bf0000,#fefef4,1,1,Olausson,Lackas,Raymond,Walden,Brindley,Jirícek,Raymond,Lackas,Kuehne,Walden,Brindley,Kleber,Olausson,Raymond,Lackas,Rondeau,Vavrina,Cleaver,Gylander,
+2034/2035,10,0,Rangers,NYR,-1,-1,-1,-1,-1,-1,-1,-1,#0161ab,#e6393f,#fefef4,71,1,Forget,Brown,McKinney,Humphreys,Carlsson,Howell,McKinney,Brown,Fox,Humphreys,Carlsson,Howell,Cherepanov,Forget,Fondrk,Humphreys,Lee,Brennan,Hammar,
+2034/2035,11,0,Kings,LAK,-1,-1,-1,-1,-1,-1,-1,-1,#000000,#afb7ba,#fefef4,1,2,Kaliyev,Byfield,MacMillan,Kaliyev,Chauvin,Hunter,MacMillan,Byfield,Clarke,Kaliyev,Chauvin,Korchinski,MacMillan,Kaliyev,Chauvin,Hunter,Miller,Vinni,Mangbo,
+2034/2035,12,0,Stars,DAL,-1,-1,-1,-1,-1,-1,-1,-1,#01865b,#000000,#fefef4,71,2,Rämet,Roberts,Hayes,Hayes,Rämet,Wolframe,Virtanen,Roberts,Hamilton,Hayes,Rämet,Lacombe,Durocher,Perreault,Rämet,Hayes,Varkonyi,Oettinger,Ratzlaff,
+2034/2035,14,0,Flyers,PHI,-1,-1,-1,-1,-1,-1,-1,-1,#ff6319,#000000,#fefef4,71,1,Semeniuk,Moroz,Kibblewhite,Lacher,Gendron,Boqvist,Moroz,Kibblewhite,Buck,Gendron,Shantz,Park,Gendron,Kibblewhite,Park,Rucinski,Devji,Portillo,Brideau,
+2034/2035,15,0,Penguins,PIT,-1,-1,-1,-1,-1,-1,-1,-1,#ffb81c,#000000,#fefef4,1,1,Spence,McCann,Battaglia,Battaglia,McCann,Del Castillo,Kvochko,Spence,Tansem,Battaglia,McCann,Lindstein,Lallier,He,Lindstein,Battaglia,Langdon,Leenders,Silverstein,
+2034/2035,16,0,Blues,STL,-1,-1,-1,-1,-1,-1,-1,-1,#0546a0,#101f48,#ffc325,71,2,Desruisseaux,Rausa,Wycisk,Höglund,Spellacy,Mikes,Dvorský,Rausa,Holland,Höglund,Spellacy,Côté,Desruisseaux,Spellacy,Lucius,Wycisk,Dvorský,Gibbons,Lennox,
+2034/2035,17,0,Sabres,BUF,-1,-1,-1,-1,-1,-1,-1,-1,#0031ad,#0031ad,#fefef4,71,71,Svensson,Savoie,Michkov,Svensson,Leach,Dalberg,Savoie,Michkov,Dahlin,Leach,Svensson,Martin,Danielsson,Leach,Michkov,Quinn,Savoie,Bednár,Olsson,
+2034/2035,18,0,Canucks,VAN,-1,-1,-1,-1,-1,-1,-1,-1,#000084,#216300,#fefef4,1,71,Kulich,Johnson,Lekkerimäki,Lekkerimäki,Kulich,Paranych,Martone,Johnson,Grigorenko,Robertson,Kulich,Paranych,Lekkerimäki,Kulich,Tuomaala,Öhgren,Griffin,Leinonen,Korec,
+2034/2035,19,0,Flames,CGY,-1,-1,-1,-1,-1,-1,-1,-1,#c62100,#000000,#ffc600,1,71,Testa,Fyodorov,Tomík,Sandström,Machacek,Keung,Machacek,Tomík,Kayter,Sandström,Fyodorov,Keung,Fyodorov,Machacek,Smith,Testa,Beaudoin,Johansson,Viitala,
+2034/2035,20,0,Islanders,NYI,-1,-1,-1,-1,-1,-1,-1,-1,#00529b,#f57d31,#fefef4,71,1,Lehtonen,Cooley,Butcher,Nicholas,Richmond,Hady,Lehtonen,Cooley,Kearsey,Nicholas,Richmond,Makagonov,Lehtonen,Cooley,Plakhov,Butcher,Räty,Björk,Askarov,
+2034/2035,21,0,Devils,NJD,-1,-1,-1,-1,-1,-1,-1,-1,#e03a3e,#000000,#fefef4,71,1,Welsh,Hughes,Poirier,Kasper,Stuart,Toporowski,Poirier,Hughes,Wilson,McGregor,Stuart,Kirdy,Dirk,Poirier,Welsh,Kasper,McGregor,Markus,Blomqvist,
+2034/2035,22,0,Capitals,WAS,-1,-1,-1,-1,-1,-1,-1,-1,#c60c30,#002147,#fefef4,71,1,Baumuller,Lacroix,Roobroeck,Honzek,Baumuller,Scanzano,Lacroix,Roobroeck,Nemec,Warr,Baumuller,Kindel,Baumuller,Warr,Burian,McGrowther,Roobroeck,Beaupit,Cranley,
+2034/2035,23,0,Oilers,EDM,-1,-1,-1,-1,-1,-1,-1,-1,#002776,#ff6319,#fefef4,1,71,Musty,Harding,But,Harding,Crosby,Melin,But,Svan,Poll,Harding,Crosby,Kelnar,Pinelli,Musty,Hirsche,McFaul,Paré,George,Koskinen,
+2034/2035,24,0,Hurricanes,CAR,-1,-1,-1,-1,-1,-1,-1,-1,#e03a3e,#000000,#fefef4,71,2,Löf,Suzuki,Zapata,Suzuki,Löf,Murphy,Hage,Zapata,Cristoforo,Suzuki,Löf,Murphy,Hage,Ortega,Löf,Suzuki,Zapata,Beaunoyer,Christensen,
+2034/2035,25,0,Avalanche,COL,-1,-1,-1,-1,-1,-1,-1,-1,#8b2942,#01548a,#a9b0b8,1,71,Migulya,McSharry,Almen,Surin,McSharry,Davydov,Migulya,Almen,Veilleux,Surin,McSharry,Hughes,Sawchyn,Almen,Snuggerud,Marcik,Oremba,Sanderman,Maillet,
+2034/2035,26,0,Coyotes,ARZ,-1,-1,-1,-1,-1,-1,-1,-1,#8c2633,#000000,#e2d6b5,1,2,Dolina,Matthews,Sommerfeld,Sommerfeld,McDavid,McNab,,Melnychuk,Kosmachyov,Sommerfeld,,Kettles,Dolina,Matthews,McDavid,Kosmachyov,Beck,Pruden,Stastny,
+2034/2035,27,0,Sharks,SJS,-1,-1,-1,-1,-1,-1,-1,-1,#006778,#000000,#fefef4,1,2,Gosal,Borg,Ponomaryov,Ponomaryov,Shurgot,Rinzel,Gosal,Borg,Mintyukov,Ponomaryov,Shurgot,Bedkowski,Borg,Gosal,Bohlin,Shurgot,Spehar,Härenstam,Lavallée,
+2034/2035,28,0,Senators,OTT,-1,-1,-1,-1,-1,-1,-1,-1,#e4173e,#000000,#fefef4,71,71,Taylor,Harsanyi,Guenther,Taylor,Harsanyi,Lavoie,Misa,Guenther,Pattulo,Taylor,Harsanyi,Lavoie,Pattulo,Taylor,Donnelly,Heidt,Beaudin,Wutzke,Krajci,
+2034/2035,29,0,Lightning,TBL,-1,-1,-1,-1,-1,-1,-1,-1,#013e7d,#000000,#fefef4,71,2,Vanacker,Chovan,Maze,Viljanen,Petr,Addison,Vanacker,Chovan,Barbashev,Viljanen,Petr,Addison,Chovan,Reynolds,Martin,Viljanen,Grubbe,Commesso,Picklyk,
+2034/2035,30,0,Ducks,ANA,-1,-1,-1,-1,-1,-1,-1,-1,#ef5225,#91764b,#fefef4,1,2,Zegras,Ritchie,Sennecke,Sennecke,Zegras,Picard,McTavish,Ritchie,Guthrie,Sennecke,Zegras,Drysdale,Zegras,Guthrie,Inkinen,McTavish,Okunev,Wilson,Palonen,
+2034/2035,31,0,Panthers,FLA,-1,-1,-1,-1,-1,-1,-1,-1,#c60c30,#002e5f,#d59c05,71,2,Burbidge,Karjalahti,Nordh,Kevan,Burbidge,Skorepa,Nordh,Karjalahti,McGuire,Kevan,Burbidge,Skorepa,Karjalahti,Wellig,Jorganson,Shtrom,Zetterberg,Knight,Cord,
+2034/2035,32,0,Predators,NSH,-1,-1,-1,-1,-1,-1,-1,-1,#002e62,#fdbb2f,#fefef4,71,2,McKenzie,Keller,Kemell,Holmgren,Martin,Sokolov,Kemell,Keller,Huynh,Holmgren,Martin,Pajkic,Martin,Keller,Holmgren,Kemell,Lafleur,D'Aigle,Boychuk,
+2034/2035,33,0,Jets,WPG,-1,-1,-1,-1,-1,-1,-1,-1,#041e42,#00488f,#fefef4,1,1,Nordh,Deslauriers,L'Italien,Nordh,Vlasov,Persson,Deslauriers,L'Italien,Belliveau,Nordh,Vlasov,Spetz,Mrsic,Martin,Deslauriers,Ischenko,Persson,Walsh,Kokko,
+2034/2035,34,0,Blue Jackets,CBJ,-1,-1,-1,-1,-1,-1,-1,-1,#00285c,#e03a3e,#fefef4,1,1,Mynarski,Sillinger,Kurth,Mynarski,Gerwing,Mailloux,Yager,Sillinger,Luchanko,Mynarski,Gerwing,Ruttan,Yager,Luchanko,Obobaifo,Martineau,Mynarski,Pelletier,Downey,
+2034/2035,35,0,Wild,MIN,-1,-1,-1,-1,-1,-1,-1,-1,#025736,#bf2b37,#eee3c7,1,1,Karlsson,Snider,Boldy,Boldy,Smith,Nehmens,Karlsson,Snider,Smith,Smith,Boldy,Aucoin,Belle,Greentree,Boldy,Cormier,Smith,Wallstedt,Augustine,
+2034/2035,4182,0,Golden Knights,VGK,-1,-1,-1,-1,-1,-1,-1,-1,#333f48,#000000,#fefef4,1,2,Oliver,Kullberg,Schmidt,Sysoyev,Schmidt,Jirícek,Oliver,Kullberg,Persson,Sysoyev,Schmidt,Jirícek,Patterson,Doroshenko,Oliver,Caswell,Kullberg,Zyulkov,Alanne,
+2034/2035,4838,0,Kraken,SEA,-1,-1,-1,-1,-1,-1,-1,-1,#000e32,#68adce,#fefef4,1,71,Demidov,Zöld,Wright,Zöld,Doucet,Branzovsky,Wright,Demidov,Pisarczyk,Zöld,Doucet,Corriveau,Doucet,Demidov,Hansen,Leroux,Willis,Krumpschmid,Brännlund,
+2034/2035,5088,0,Icebergs,STJ,-1,-1,-1,-1,-1,-1,-1,-1,#203468,#ff6600,#ffffff,71,71,Poroshkov,Chytil,Lindeberg,Robins,Pitre,Von Richter,Lindeberg,Chytil,Lessard,Robins,Pitre,McConnell,Robins,Bawa,MacAusland,Poroshkov,Chytil,Sopik,Hrabal,
+2034/2035,5090,0,Cowabungas,TOF,-1,-1,-1,-1,-1,-1,-1,-1,#29abe2,#000000,#ffffff,1,71,Eiserman,Kariya Jr,Perry Jr,Eiserman,Kaprizov,Safarov,Perry Jr,Kariya Jr,Breton,Eiserman,Kaprizov,Safarov,Kariya Jr,Kaprizov,Perry Jr,Nygårds,,Blaschke,Oster,
+2034/2035,5092,0,Rock,HAM,-1,-1,-1,-1,-1,-1,-1,-1,#ff6600,#000000,#ffffff,71,71,Stützle,Pantekoek,Soto,Wray,Catton,McLeod,Pantekoek,Stützle,Fortier-Gendron,Wray,Catton,Hantunen,Stützle,Pantekoek,Soto,Ward,Johansson,Bjarnason,Smallwood,
+2034/2035,5098,0,Playas,TIJ,-1,-1,-1,-1,-1,-1,-1,-1,#2e3192,#dac38e,#ffffff,1,2,Miedema,Ilyichyov,Dvorak,Dolan,Peitzsche,Tarkanyan,Miedema,Suzdalev,Gill,Dolan,Peitzsche,Pettersson Askling,Suzdalev,,Dolan,Miedema,Ilyichyov,Ruggiero,Basse,

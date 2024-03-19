@@ -1,31 +1,37 @@
-Season,TeamId,LeagueId,Name
-2003/2004,0,0,Canadiens
-2003/2004,3,0,Maple Leafs
-2003/2004,5,0,Bruins
-2003/2004,8,0,Blackhawks
-2003/2004,9,0,Red Wings
-2003/2004,10,0,Rangers
-2003/2004,11,0,Kings
-2003/2004,12,0,Stars
-2003/2004,14,0,Flyers
-2003/2004,15,0,Penguins
-2003/2004,16,0,Blues
-2003/2004,17,0,Sabres
-2003/2004,18,0,Canucks
-2003/2004,19,0,Flames
-2003/2004,20,0,Islanders
-2003/2004,21,0,Devils
-2003/2004,22,0,Capitals
-2003/2004,23,0,Oilers
-2003/2004,24,0,Hurricanes
-2003/2004,25,0,Avalanche
-2003/2004,26,0,Coyotes
-2003/2004,27,0,Sharks
-2003/2004,28,0,Senators
-2003/2004,29,0,Lightning
-2003/2004,30,0,Mighty Ducks
-2003/2004,31,0,Panthers
-2003/2004,32,0,Predators
-2003/2004,33,0,Thrashers
-2003/2004,34,0,Blue Jackets
-2003/2004,35,0,Wild
+Season,TeamId,LeagueId,Name,Nickname,Abbr,Parent Team 1,Parent Team 2,Parent Team 3,Parent Team 4,Parent Team 5,Parent Team 6,Parent Team 7,Parent Team 8,Primary Color,Secondary Color,Text Color,Conference Id,Division Id
+2034/2035,0,0,Montreal,Canadiens,MTL,-1,-1,-1,-1,-1,-1,-1,-1,#c60000,#0031ad,#fefef4,0,0
+2034/2035,3,0,Toronto,Maple Leafs,TOR,-1,-1,-1,-1,-1,-1,-1,-1,#000084,#000084,#fefef4,0,0
+2034/2035,5,0,Boston,Bruins,BOS,-1,-1,-1,-1,-1,-1,-1,-1,#ffc422,#000000,#fefef4,0,1
+2034/2035,8,0,Chicago,Blackhawks,CHI,-1,-1,-1,-1,-1,-1,-1,-1,#e3263a,#000000,#fefef4,1,1
+2034/2035,9,0,Detroit,Red Wings,DET,-1,-1,-1,-1,-1,-1,-1,-1,#bf0000,#bf0000,#fefef4,1,1
+2034/2035,10,0,New York,Rangers,NYR,-1,-1,-1,-1,-1,-1,-1,-1,#0161ab,#e6393f,#fefef4,0,1
+2034/2035,11,0,Los Angeles,Kings,LAK,-1,-1,-1,-1,-1,-1,-1,-1,#000000,#afb7ba,#fefef4,1,2
+2034/2035,12,0,Dallas,Stars,DAL,-1,-1,-1,-1,-1,-1,-1,-1,#01865b,#000000,#fefef4,0,2
+2034/2035,14,0,Philadelphia,Flyers,PHI,-1,-1,-1,-1,-1,-1,-1,-1,#ff6319,#000000,#fefef4,0,1
+2034/2035,15,0,Pittsburgh,Penguins,PIT,-1,-1,-1,-1,-1,-1,-1,-1,#ffb81c,#000000,#fefef4,1,1
+2034/2035,16,0,St. Louis,Blues,STL,-1,-1,-1,-1,-1,-1,-1,-1,#0546a0,#101f48,#ffc325,0,2
+2034/2035,17,0,Buffalo,Sabres,BUF,-1,-1,-1,-1,-1,-1,-1,-1,#0031ad,#0031ad,#fefef4,0,0
+2034/2035,18,0,Vancouver,Canucks,VAN,-1,-1,-1,-1,-1,-1,-1,-1,#000084,#216300,#fefef4,1,0
+2034/2035,19,0,Calgary,Flames,CGY,-1,-1,-1,-1,-1,-1,-1,-1,#c62100,#000000,#ffc600,1,0
+2034/2035,20,0,New York,Islanders,NYI,-1,-1,-1,-1,-1,-1,-1,-1,#00529b,#f57d31,#fefef4,0,1
+2034/2035,21,0,New Jersey,Devils,NJD,-1,-1,-1,-1,-1,-1,-1,-1,#e03a3e,#000000,#fefef4,0,1
+2034/2035,22,0,Washington,Capitals,WAS,-1,-1,-1,-1,-1,-1,-1,-1,#c60c30,#002147,#fefef4,0,1
+2034/2035,23,0,Edmonton,Oilers,EDM,-1,-1,-1,-1,-1,-1,-1,-1,#002776,#ff6319,#fefef4,1,0
+2034/2035,24,0,Carolina,Hurricanes,CAR,-1,-1,-1,-1,-1,-1,-1,-1,#e03a3e,#000000,#fefef4,0,2
+2034/2035,25,0,Colorado,Avalanche,COL,-1,-1,-1,-1,-1,-1,-1,-1,#8b2942,#01548a,#a9b0b8,1,0
+2034/2035,26,0,Arizona,Coyotes,ARZ,-1,-1,-1,-1,-1,-1,-1,-1,#8c2633,#000000,#e2d6b5,1,2
+2034/2035,27,0,San Jose,Sharks,SJS,-1,-1,-1,-1,-1,-1,-1,-1,#006778,#000000,#fefef4,1,2
+2034/2035,28,0,Ottawa,Senators,OTT,-1,-1,-1,-1,-1,-1,-1,-1,#e4173e,#000000,#fefef4,0,0
+2034/2035,29,0,Tampa Bay,Lightning,TBL,-1,-1,-1,-1,-1,-1,-1,-1,#013e7d,#000000,#fefef4,0,2
+2034/2035,30,0,Anaheim,Ducks,ANA,-1,-1,-1,-1,-1,-1,-1,-1,#ef5225,#91764b,#fefef4,1,2
+2034/2035,31,0,Florida,Panthers,FLA,-1,-1,-1,-1,-1,-1,-1,-1,#c60c30,#002e5f,#d59c05,0,2
+2034/2035,32,0,Nashville,Predators,NSH,-1,-1,-1,-1,-1,-1,-1,-1,#002e62,#fdbb2f,#fefef4,0,2
+2034/2035,33,0,Winnipeg,Jets,WPG,-1,-1,-1,-1,-1,-1,-1,-1,#041e42,#00488f,#fefef4,1,1
+2034/2035,34,0,Columbus,Blue Jackets,CBJ,-1,-1,-1,-1,-1,-1,-1,-1,#00285c,#e03a3e,#fefef4,1,1
+2034/2035,35,0,Minnesota,Wild,MIN,-1,-1,-1,-1,-1,-1,-1,-1,#025736,#bf2b37,#eee3c7,1,1
+2034/2035,4182,0,Vegas,Golden Knights,VGK,-1,-1,-1,-1,-1,-1,-1,-1,#333f48,#000000,#fefef4,1,2
+2034/2035,4838,0,Seattle,Kraken,SEA,-1,-1,-1,-1,-1,-1,-1,-1,#000e32,#68adce,#fefef4,1,0
+2034/2035,5088,0,St Johns,Icebergs,STJ,-1,-1,-1,-1,-1,-1,-1,-1,#203468,#ff6600,#ffffff,0,0
+2034/2035,5090,0,Tofino,Cowabungas,TOF,-1,-1,-1,-1,-1,-1,-1,-1,#29abe2,#000000,#ffffff,1,0
+2034/2035,5092,0,Hamilton,Rock,HAM,-1,-1,-1,-1,-1,-1,-1,-1,#ff6600,#000000,#ffffff,0,0
+2034/2035,5098,0,Tijuana,Playas,TIJ,-1,-1,-1,-1,-1,-1,-1,-1,#2e3192,#dac38e,#ffffff,1,2
