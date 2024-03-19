@@ -141,3 +141,6 @@ simplifiedCSV/player_stats.csv
 simplifiedCSV/players.csv
 simplifiedCSV/team_lines.csv
 simplifiedCSV/teams.csv
+simplifiedCSV/games_penalties.csv
+simplifiedCSV/games_result.csv
+simplifiedCSV/games_scores.csv

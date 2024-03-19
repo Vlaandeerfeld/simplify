@@ -209,11 +209,10 @@ def simplifyFiles(files, season, teams, leagues):
 	df1 = pd.merge(dfTeamDataSimplified, dfTeamRecords, on = 'TeamId')
 	dfTeamSimplified = pd.merge(df1, dfTeamStats, on = 'TeamId')
 
+	print(dfSchedules['Game Id'])
 	#create simplified schedule
 	dfSchedulesSimplified = dfSchedules[dfSchedules['League Id'].isin(leagues)]
-	dfBoxGameSummarySimplified1 = dfBoxGameSummary[dfBoxGameSummary['Team Home'].isin(teams)]
-	dfBoxGameSummarySimplified2 = dfBoxGameSummary[dfBoxGameSummary['Team Away'].isin(teams)]
-	dfBoxGameSummarySimplified = pd.concat([dfBoxGameSummarySimplified1, dfBoxGameSummarySimplified2], ignore_index = True)
+	dfBoxGameSummarySimplified = dfBoxGameSummary[dfBoxGameSummary['Team Away'].isin(teams)]
 	dfBoxScoringSummarySimplified = dfBoxScoringSummary[dfBoxScoringSummary['TeamId'].isin(teams)]
 	dfBoxPenaltiesSummarySimplified = dfBoxPenaltiesSummary[dfBoxPenaltiesSummary['TeamId'].isin(teams)]
 
@@ -222,17 +221,18 @@ def simplifyFiles(files, season, teams, leagues):
 	dfBoxPenaltiesSummarySimplified = dfBoxPenaltiesSummarySimplified.drop(columns = ['TeamId'])
 
 	dfSchedulesGameSimplified = pd.merge(dfSchedulesSimplified, dfBoxGameSummarySimplified, on = "Game Id")
-	dfSchedulesGameScoringSimplified = pd.merge(dfSchedulesGameSimplified, dfBoxScoringSummarySimplified, on = "Game Id")
-	dfSchedulesGameScoringPenaltiesSimplified = pd.merge(dfSchedulesGameScoringSimplified, dfBoxPenaltiesSummarySimplified, on = "Game Id",  suffixes = ('OnGoal', 'OnPenalty'))
 
-	dfSchedulesGameScoringPenaltiesSimplified['HomeSQ0SQ1SQ2SQ3SQ4'] = dfSchedulesGameScoringPenaltiesSimplified[dfSchedulesGameScoringPenaltiesSimplified.columns[50:54]].apply(lambda x: ','.join(x.dropna().astype(str)), axis=1)
-	dfSchedulesGameScoringPenaltiesSimplified['AwaySQ0SQ1SQ2SQ3SQ4'] = dfSchedulesGameScoringPenaltiesSimplified[dfSchedulesGameScoringPenaltiesSimplified.columns[55:60]].apply(lambda x: ','.join(x.dropna().astype(str)), axis=1)
+	print(dfSchedulesGameSimplified.columns)
 
-	dfSchedulesGameScoringPenaltiesSimplified = dfSchedulesGameScoringPenaltiesSimplified.drop(dfSchedulesGameScoringPenaltiesSimplified.iloc[:, 50:60], axis = 1)
+	dfBoxPenaltiesSummarySimplified.to_csv('simplifiedCSV/games_penalties.csv', index=False)
+	dfBoxScoringSummarySimplified.to_csv('simplifiedCSV/games_scores.csv', index=False)
 
-	print(dfSchedulesGameScoringPenaltiesSimplified.columns)
+	dfSchedulesGameSimplified['HomeSQ0SQ1SQ2SQ3SQ4'] = dfSchedulesGameSimplified[dfSchedulesGameSimplified.columns[51:56]].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
+	dfSchedulesGameSimplified['AwaySQ0SQ1SQ2SQ3SQ4'] = dfSchedulesGameSimplified[dfSchedulesGameSimplified.columns[56:61]].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
 
-	dfSchedulesGameScoringPenaltiesSimplified.to_csv('simplifiedCSV/games.csv', index=False)
+	dfBoxGameSummarySimplifiedFinal = dfSchedulesGameSimplified.drop(dfSchedulesGameSimplified.iloc[:, 50:60], axis = 1)
+
+	dfBoxGameSummarySimplifiedFinal.to_csv('simplifiedCSV/games_result.csv', index=False)
 
 	#simplify dataframes to merge into game_id_player and game_id_goalie
 	dfBoxSkaterSummarySimplified = dfBoxSkaterSummary[dfBoxSkaterSummary['TeamId'].isin(teams)]
