@@ -20,9 +20,13 @@ def importFiles():
 	dfConferences = pd.read_csv('csv/conferences.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 	dfDivisions = pd.read_csv('csv/divisions.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 	dfLeague = pd.read_csv('csv/league_data.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfDraftResult = pd.read_csv('csv/draft_info.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfDraftInfo = pd.read_csv('csv/draft_index.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfStaffMaster = pd.read_csv('csv/staff_master.csv', sep = ';', on_bad_lines='skip', encoding='ISO-8859-15', dtype=str)
+	dfStaffRatings = pd.read_csv('csv/staff_ratings.csv', sep = ';', encoding='ISO-8859-15', dtype=str, index_col=False)
 
-	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague])
-	
+	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings])
+
 def getLeagues(dfSchedules, dfTeamData):
 	#Get season start year and end year
 	seasonStart =  dfSchedules['Date'][0]
@@ -53,8 +57,8 @@ def getLeagues(dfSchedules, dfTeamData):
 
 def simplifyFiles(files, season, teams, leagues):
 	
-	dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague = files
-	
+	dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings = files
+
 	#get length of playerMaster
 	interval = len(dfPlayerMaster.index)
 
@@ -93,6 +97,7 @@ def simplifyFiles(files, season, teams, leagues):
 	dfPlayerMasterSimplified = pd.merge(dfPlayerMasterSimplified, dfPlayerRatings, on = "PlayerId")
 
 	dfPlayerMasterSimplified.to_csv('simplifiedCSV/players.csv', index=False)
+
 
 	#simplify player skater dataframe
 	dfPlayerSkater = dfPlayerSkater[dfPlayerSkater['TeamId'].isin(teams)]
@@ -222,8 +227,6 @@ def simplifyFiles(files, season, teams, leagues):
 
 	dfSchedulesGameSimplified = pd.merge(dfSchedulesSimplified, dfBoxGameSummarySimplified, on = "Game Id")
 
-	print(dfSchedulesGameSimplified.columns)
-
 	dfBoxPenaltiesSummarySimplified.to_csv('simplifiedCSV/games_penalties.csv', index=False)
 	dfBoxScoringSummarySimplified.to_csv('simplifiedCSV/games_scores.csv', index=False)
 
@@ -248,8 +251,24 @@ def simplifyFiles(files, season, teams, leagues):
 	dfGameIdPlayer = dfGameIdPlayer.drop(columns = ['Played', 'Home', 'Score Home', 'Away', 'Score Away', 'Overtime', 'Shootout', 'Team OZ Starts', 'Team NZ Starts', 'Team DZ Starts'])
 
 	dfGameIdPlayer.to_csv('simplifiedCSV/player_stats.csv', index=False)
-
 	dfGameIdGoalie.to_csv('simplifiedCSV/goalie_stats.csv', index=False)
+	
+	interval = len(dfStaffMaster.index)
+
+	column3 = []
+
+	#create list of season of length playerMaster to insert at the start of the dataframe
+	for x in range(interval):
+		column3.append(season)
+
+	dfStaffMaster.insert(0, 'Season',  value=column3)
+
+	dfStaff = pd.merge(dfStaffMaster, dfStaffRatings, on = 'StaffId')
+	dfStaff.to_csv('simplifiedCSV/staff.csv', index=False)
+
+	dfDraft = pd.merge(dfDraftResult, dfDraftInfo, on = 'DraftId')
+	dfDraft = dfDraft.rename(columns = {'Tam': 'Team'})
+	dfDraft.to_csv('simplifiedCSV/draft.csv', index=False)
 
 def main():
 	files = importFiles()
