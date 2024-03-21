@@ -24,8 +24,20 @@ def importFiles():
 	dfDraftInfo = pd.read_csv('csv/draft_index.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 	dfStaffMaster = pd.read_csv('csv/staff_master.csv', sep = ';', on_bad_lines='skip', encoding='ISO-8859-15', dtype=str)
 	dfStaffRatings = pd.read_csv('csv/staff_ratings.csv', sep = ';', encoding='ISO-8859-15', dtype=str, index_col=False)
+	dfGoalieCareerPS = pd.read_csv('csv/player_goalie_career_stats_ps.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfGoalieCareerPO = pd.read_csv('csv/player_goalie_career_stats_po.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfGoalieCareerRS = pd.read_csv('csv/player_goalie_career_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfGoalieRetiredPS = pd.read_csv('csv/player_goalie_retired_career_stats_ps.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfGoalieRetiredPO = pd.read_csv('csv/player_goalie_retired_career_stats_po.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfGoalieRetiredRS = pd.read_csv('csv/player_goalie_retired_career_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerCareerPS = pd.read_csv('csv/player_skater_career_stats_ps.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerCareerPO = pd.read_csv('csv/player_skater_career_stats_po.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerCareerRS = pd.read_csv('csv/player_skater_career_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerRetiredPS = pd.read_csv('csv/player_skater_retired_career_stats_ps.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerRetiredPO = pd.read_csv('csv/player_skater_retired_career_stats_po.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerRetiredRS = pd.read_csv('csv/player_skater_retired_career_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 
-	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings])
+	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings, dfGoalieCareerPS, dfGoalieCareerPO, dfGoalieCareerRS, dfGoalieRetiredPS, dfGoalieRetiredPO, dfGoalieRetiredRS, dfPlayerCareerPS, dfPlayerCareerPO, dfPlayerCareerRS, dfPlayerRetiredPS, dfPlayerRetiredPO, dfPlayerRetiredRS])
 
 def getLeagues(dfSchedules, dfTeamData):
 	#Get season start year and end year
@@ -57,8 +69,7 @@ def getLeagues(dfSchedules, dfTeamData):
 
 def simplifyFiles(files, season, teams, leagues):
 	
-	dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings = files
-
+	dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings, dfGoalieCareerPS, dfGoalieCareerPO, dfGoalieCareerRS, dfGoalieRetiredPS , dfGoalieRetiredPO, dfGoalieRetiredRS, dfPlayerCareerPS, dfPlayerCareerPO, dfPlayerCareerRS, dfPlayerRetiredPS, dfPlayerRetiredPO, dfPlayerRetiredRS = files
 	#get length of playerMaster
 	interval = len(dfPlayerMaster.index)
 
@@ -256,6 +267,42 @@ def simplifyFiles(files, season, teams, leagues):
 	interval = len(dfStaffMaster.index)
 
 	column3 = []
+
+	dfGoalieCareerPSSimplified = dfGoalieCareerPS[~dfGoalieCareerPS['PlayerId'].isin(['-1']) == True]
+	dfGoalieCareerPSSimplified.to_csv('simplifiedCSV/goalie_career_ps.csv', index=False)
+
+	dfGoalieCareerPOSimplified = dfGoalieCareerPO[~dfGoalieCareerPO['PlayerId'].isin(['-1']) == True] 
+	dfGoalieCareerPOSimplified.to_csv('simplifiedCSV/goalie_career_po.csv', index=False)
+
+	dfGoalieCareerRSSimplified  = dfGoalieCareerRS[~dfGoalieCareerRS['PlayerId'].isin(['-1']) == True]
+	dfGoalieCareerRSSimplified.to_csv('simplifiedCSV/goalie_career_rs.csv', index=False)
+
+	dfGoalieRetiredPSSimplified = dfGoalieRetiredPS[~dfGoalieRetiredPS['PlayerId'].isin(['-1']) == True]
+	dfGoalieRetiredPSSimplified.to_csv('simplifiedCSV/goalie_retired_ps.csv', index=False)
+
+	dfGoalieRetiredPOSimplified = dfGoalieRetiredPO[~dfGoalieRetiredPO['PlayerId'].isin(['-1']) == True]
+	dfGoalieRetiredPOSimplified.to_csv('simplifiedCSV/goalie_retired_po.csv', index=False)
+
+	dfGoalieRetiredRSSimplified = dfGoalieRetiredRS[~dfGoalieRetiredRS['PlayerId'].isin(['-1']) == True]
+	dfGoalieRetiredRSSimplified.to_csv('simplifiedCSV/goalie_retired_rs.csv', index=False)
+
+	dfPlayerCareerPSSimplified = dfPlayerCareerPS[~dfPlayerCareerPS['PlayerId'].isin(['-1']) == True]
+	dfPlayerCareerPSSimplified.to_csv('simplifiedCSV/player_career_ps.csv', index=False)
+
+	dfPlayerCareerPOSimplified = dfPlayerCareerPO[~dfPlayerCareerPO['PlayerId'].isin(['-1']) == True]
+	dfPlayerCareerPOSimplified.to_csv('simplifiedCSV/player_career_po.csv', index=False)
+
+	dfPlayerCareerRSSimplified = dfPlayerCareerRS[~dfPlayerCareerRS['PlayerId'].isin(['-1']) == True]
+	dfPlayerCareerRSSimplified.to_csv('simplifiedCSV/player_career_rs.csv', index=False)
+
+	dfPlayerRetiredPSSimplified = dfPlayerRetiredPS[~dfPlayerRetiredPS['PlayerId'].isin(['-1']) == True]
+	dfPlayerRetiredPSSimplified.to_csv('simplifiedCSV/player_retired_ps.csv', index=False)
+
+	dfPlayerRetiredPOSimplified = dfPlayerRetiredPO[~dfPlayerRetiredPO['PlayerId'].isin(['-1']) == True]
+	dfPlayerRetiredPOSimplified.to_csv('simplifiedCSV/player_retired_po.csv', index=False)
+
+	dfPlayerRetiredRSSimplified = dfPlayerRetiredRS[~dfPlayerRetiredRS['PlayerId'].isin(['-1']) == True]
+	dfPlayerRetiredRSSimplified.to_csv('simplifiedCSV/player_retired_rs.csv', index=False)
 
 	#create list of season of length playerMaster to insert at the start of the dataframe
 	for x in range(interval):
