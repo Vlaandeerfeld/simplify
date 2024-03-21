@@ -237,6 +237,7 @@ def simplifyFiles(files, season, teams, leagues):
 	dfTeamLinesSimplified.to_csv('simplifiedCSV/team_lines.csv', index=False)
 
 	#simplify team stats
+	
 	dfTeamStats = dfTeamStats[dfTeamStats['TeamId'].isin(teams)]
 
 	dfTeamStatsPlayoffsSimplified = dfTeamStatsPlayoffs[dfTeamStatsPlayoffs['TeamId'].isin(teams)]
@@ -247,6 +248,17 @@ def simplifyFiles(files, season, teams, leagues):
 	dfTeamRecords = dfTeamRecords[dfTeamRecords['Team Id'].isin(teams)]
 	dfTeamRecords = dfTeamRecords.drop(columns = ['League Id', 'Conf Id', 'Div Id'])
 	dfTeamRecords = dfTeamRecords.rename(columns = {'Team Id': 'TeamId'})
+	#get length of dataframe
+	interval = len(dfTeamRecords.index)
+
+	column = []
+
+	#create list to add season to start of dataframe
+	for x in range(interval):
+		column.append(season)
+
+	#add season to beginning of dataframe
+	dfTeamRecords.insert(0, 'Season',  value=column)
 
 	#double merge to create team simplified
 	dfTeamSimplified = pd.merge(dfTeamRecords, dfTeamStats, on = 'TeamId')
