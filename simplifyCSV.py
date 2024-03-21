@@ -36,8 +36,10 @@ def importFiles():
 	dfPlayerRetiredPS = pd.read_csv('csv/player_skater_retired_career_stats_ps.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 	dfPlayerRetiredPO = pd.read_csv('csv/player_skater_retired_career_stats_po.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 	dfPlayerRetiredRS = pd.read_csv('csv/player_skater_retired_career_stats_rs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfTeamStatsPlayoffs = pd.read_csv('csv/team_stats_playoffs.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
+	dfPlayerContractRenewed = pd.read_csv('csv/player_contract_renewed.csv', sep = ';', encoding='ISO-8859-15', dtype=str)
 
-	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings, dfGoalieCareerPS, dfGoalieCareerPO, dfGoalieCareerRS, dfGoalieRetiredPS, dfGoalieRetiredPO, dfGoalieRetiredRS, dfPlayerCareerPS, dfPlayerCareerPO, dfPlayerCareerRS, dfPlayerRetiredPS, dfPlayerRetiredPO, dfPlayerRetiredRS])
+	return([dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings, dfGoalieCareerPS, dfGoalieCareerPO, dfGoalieCareerRS, dfGoalieRetiredPS, dfGoalieRetiredPO, dfGoalieRetiredRS, dfPlayerCareerPS, dfPlayerCareerPO, dfPlayerCareerRS, dfPlayerRetiredPS, dfPlayerRetiredPO, dfPlayerRetiredRS, dfTeamStatsPlayoffs, dfPlayerContractRenewed])
 
 def getLeagues(dfSchedules, dfTeamData):
 	#Get season start year and end year
@@ -69,7 +71,7 @@ def getLeagues(dfSchedules, dfTeamData):
 
 def simplifyFiles(files, season, teams, leagues):
 	
-	dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings, dfGoalieCareerPS, dfGoalieCareerPO, dfGoalieCareerRS, dfGoalieRetiredPS , dfGoalieRetiredPO, dfGoalieRetiredRS, dfPlayerCareerPS, dfPlayerCareerPO, dfPlayerCareerRS, dfPlayerRetiredPS, dfPlayerRetiredPO, dfPlayerRetiredRS = files
+	dfPlayerMaster, dfPlayerSkater, dfTeamData, dfTeamLines, dfPlayerGoalie, dfPlayerContract, dfTeamStats, dfTeamRecords, dfSchedules, dfBoxSkaterSummary, dfBoxGoalieSummary, dfBoxGameSummary, dfBoxScoringSummary, dfBoxPenaltiesSummary, dfPlayerRatings, dfConferences, dfDivisions, dfLeague, dfDraftResult, dfDraftInfo, dfStaffMaster, dfStaffRatings, dfGoalieCareerPS, dfGoalieCareerPO, dfGoalieCareerRS, dfGoalieRetiredPS , dfGoalieRetiredPO, dfGoalieRetiredRS, dfPlayerCareerPS, dfPlayerCareerPO, dfPlayerCareerRS, dfPlayerRetiredPS, dfPlayerRetiredPO, dfPlayerRetiredRS, dfTeamStatsPlayoffs, dfPlayerContractRenewed = files
 	#get length of playerMaster
 	interval = len(dfPlayerMaster.index)
 
@@ -124,6 +126,23 @@ def simplifyFiles(files, season, teams, leagues):
 	dfPlayerSimplified = pd.merge(dfPlayerMasterSimplified, dfPlayerSkater, on = "PlayerId")
 
 	#simplify player contracts dataframe
+	dfPlayerContractRenewed = dfPlayerContractRenewed[dfPlayerContractRenewed['Team'].isin(teams)]
+	dfPlayerContractRenewed = dfPlayerContractRenewed[~dfPlayerContractRenewed['PlayerId'].isin(['0']) == True]
+	dfPlayerContractRenewedSimplified = dfPlayerContractRenewed.drop(dfPlayerContractRenewed.iloc[:, 6:7], axis = 1)
+
+	#get length of dataframe
+	interval1 = len(dfPlayerContractRenewedSimplified.index)
+
+	column1 = []
+
+	#create list to add season to start of dataframe
+	for x in range(interval1):
+		column1.append(season)
+
+	dfPlayerContractRenewedSimplified.insert(0, 'Season',  value=column1)	
+	dfPlayerContractRenewedSimplified.to_csv('simplifiedCSV/contract_renewed.csv', index=False)
+
+	#simplify player contracts dataframe
 	dfPlayerContract = dfPlayerContract[dfPlayerContract['Team'].isin(teams)]
 	dfPlayerContract = dfPlayerContract[~dfPlayerContract['PlayerId'].isin(['0']) == True]
 	dfPlayerContractSimplified = dfPlayerContract.drop(dfPlayerContract.iloc[:, 6:7], axis = 1)
@@ -173,31 +192,36 @@ def simplifyFiles(files, season, teams, leagues):
 	#get team lines and simplify to list for comparing playerid to player last name
 
 	dfTeamDataSimplified1 = dfTeamDataSimplified.drop(columns = ['Season', 'Name'], axis = 1)
-	dfTeamLines = pd.merge(dfTeamDataSimplified1, dfTeamLines, on = "TeamId")
 
-	df1 = dfTeamLines[dfTeamLines['TeamId'].isin(teams) == True]
-	df1 = df1.drop(df1.iloc[:, 20:93], axis = 1)
-	df1 = df1.drop(columns = ['Extra Attacker 1', 'Extra Attacker 2'], axis = 1)
+#	Legacy code I was proud of
+#	dfTeamLines = pd.merge(dfTeamDataSimplified1, dfTeamLines, on = "TeamId")
 
-	list1 = df1.values.tolist()
-	list2 = dfPlayerMasterSimplified.values.tolist()
-	list3 = dfGoalieStatsSimplified.values.tolist()
-
-	for x in range(len(list1)):
-		for z in range(2, len(list1[x])):
-			for a in range(len(list2)):
-				if list1[x][z] == list2[a][1]:
-					list1[x][z] = list2[a][5]
-
-			for b in range(len(list3)):
-				if list1[x][z] == list3[b][1]:
-					list1[x][z] = list3[b][5]
-
+#	df1 = dfTeamLines[dfTeamLines['TeamId'].isin(teams) == True]
+#	df1 = df1.drop(df1.iloc[:, 20:93], axis = 1)
+#	df1 = df1.drop(columns = ['Extra Attacker 1', 'Extra Attacker 2'], axis = 1)
+#
+#	list1 = df1.values.tolist()
+#	list2 = dfPlayerMasterSimplified.values.tolist()
+#	list3 = dfGoalieStatsSimplified.values.tolist()
+#
+#	for x in range(len(list1)):
+#		for z in range(2, len(list1[x])):
+#			for a in range(len(list2)):
+#				if list1[x][z] == list2[a][1]:
+#					list1[x][z] = list2[a][5]
+#
+#			for b in range(len(list3)):
+#				if list1[x][z] == list3[b][1]:
+#					list1[x][z] = list3[b][5]
+#
 	#export back to dataframe and re label columns				
-	dfTeamLinesSimplified = pd.DataFrame(list1)
-	dfTeamLinesSimplified = dfTeamLinesSimplified.rename(columns={0: "TeamId", 1: "FranchiseId", 2: "LW1", 3: "C1", 4: "RW1", 5: "LD1", 6: "RD1", 7: "LW2", 8: "C2", 9: "RW2", 10: "LD2", 11: "RD2", 12: "LW3", 13: "C3", 14: "RW3", 15: "LD3", 16: "RD3", 17: "LW4", 18: "C4", 19: "RW4", 20: "G1", 21: "G2"})
+#	dfTeamLinesSimplified = pd.DataFrame(list1)
+#	dfTeamLinesSimplified = dfTeamLinesSimplified.rename(columns={0: "TeamId", 1: "FranchiseId", 2: "LW1", 3: "C1", 4: "RW1", 5: "LD1", 6: "RD1", 7: "LW2", 8: "C2", 9: "RW2", 10: "LD2", 11: "RD2", 12: "LW3", 13: "C3", 14: "RW3", 15: "LD3", 16: "RD3", 17: "LW4", 18: "C4", 19: "RW4", 20: "G1", 21: "G2"})
 
-	dfTeamLinesSimplified = dfTeamLinesSimplified.drop(22, axis = 1)
+#	dfTeamLinesSimplified = dfTeamLinesSimplified.drop(22, axis = 1)
+
+	dfTeamLinesSimplified = dfTeamLines[dfTeamLines['TeamId'].isin(teams)]
+	dfTeamLinesSimplified = dfTeamLinesSimplified.drop(columns = ['Unnamed: 96'], axis = 1)
 
 	#get length of dataframe
 	interval = len(dfTeamLinesSimplified.index)
@@ -214,7 +238,10 @@ def simplifyFiles(files, season, teams, leagues):
 
 	#simplify team stats
 	dfTeamStats = dfTeamStats[dfTeamStats['TeamId'].isin(teams)]
-	dfTeamStats = dfTeamStats.drop(dfTeamStats.iloc[:, 19:], axis = 1)
+
+	dfTeamStatsPlayoffsSimplified = dfTeamStatsPlayoffs[dfTeamStatsPlayoffs['TeamId'].isin(teams)]
+
+	dfTeamStatsPlayoffsSimplified.to_csv('simplifiedCSV/team_playoff_stats', index=False)
 
 	#simplify team records
 	dfTeamRecords = dfTeamRecords[dfTeamRecords['Team Id'].isin(teams)]
@@ -222,8 +249,9 @@ def simplifyFiles(files, season, teams, leagues):
 	dfTeamRecords = dfTeamRecords.rename(columns = {'Team Id': 'TeamId'})
 
 	#double merge to create team simplified
-	df1 = pd.merge(dfTeamDataSimplified, dfTeamRecords, on = 'TeamId')
-	dfTeamSimplified = pd.merge(df1, dfTeamStats, on = 'TeamId')
+	dfTeamSimplified = pd.merge(dfTeamRecords, dfTeamStats, on = 'TeamId')
+
+	dfTeamSimplified.to_csv('simplifiedCSV/team_stats', index=False)
 
 	print(dfSchedules['Game Id'])
 	#create simplified schedule
